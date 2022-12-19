@@ -60,8 +60,14 @@ namespace WindowsFormsApp1
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.cpuvalue2 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // backgroundWorker1
@@ -349,13 +355,9 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(275, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 304);
+            this.groupBox1.Size = new System.Drawing.Size(188, 305);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
-            // 
-            // backgroundWorker3
-            // 
-
             // 
             // cpuvalue2
             // 
@@ -366,12 +368,58 @@ namespace WindowsFormsApp1
             this.cpuvalue2.TabIndex = 44;
             this.cpuvalue2.Text = "N/A";
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(32, 318);
+            this.trackBar1.Maximum = 533;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(233, 45);
+            this.trackBar1.TabIndex = 45;
+            this.trackBar1.TickFrequency = 533;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1.Value = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(286, 320);
+            this.textBox1.MaxLength = 500;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(58, 21);
+            this.textBox1.TabIndex = 46;
+            this.textBox1.Text = "10";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(350, 323);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 12);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "%";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(371, 319);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(79, 21);
+            this.button9.TabIndex = 48;
+            this.button9.Text = "OK";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // 
             // Mainwin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(475, 324);
+            this.ClientSize = new System.Drawing.Size(475, 354);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.cpuvalue2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Autocheck);
@@ -391,6 +439,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +476,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private System.Windows.Forms.Label cpuvalue2;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button9;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
     }
 }
 

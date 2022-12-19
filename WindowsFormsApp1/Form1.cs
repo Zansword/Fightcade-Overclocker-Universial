@@ -41,6 +41,11 @@ namespace WindowsFormsApp1
 
         }
 
+        private void Using_TrackBar_Load(object sender, EventArgs e)
+        {
+            trackBar1.Value = 10;
+        }
+        
  //**********************************************************************************************************//
  // 백그라운드 작업 - 프로세스 id 검색 및 attach
 
@@ -328,6 +333,23 @@ namespace WindowsFormsApp1
             cpuvalue2.Text = "533%";
         }
 
+        private void button9_Click_1(object sender, EventArgs e) // ok button
+        {
+            if (!ProcOpen)
+            {
+                cpustatus.Text = "Emulator is not opened!";
+                cpuvalue2.Text = "N/A";
+                return;
+            }
+
+            String cpupercent = Convert.ToString(textBox1.Text);
+            int cpuvalue = Convert.ToInt32(cpupercent, 16);
+            string cpuvalue3 = Convert.ToString(cpuvalue);
+
+            m.WriteMemory(memory, "int", cpuvalue3);
+            cpustatus.Text = "Overclocked with " + cpupercent + " %";
+            cpuvalue2.Text = cpupercent + " %";
+        }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
@@ -358,6 +380,32 @@ namespace WindowsFormsApp1
             taskA.Start();
         }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            textBox1.Text = "" + trackBar1.Value;
+//            textBox1.Text = trackBar1.Value.ToString();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Text = "0";
+            }
+            if (Convert.ToInt32(textBox1.Text) > 533)
+            {
+                textBox1.Text = "533";
+            }
+            trackBar1.Value = Convert.ToInt32(textBox1.Text);
+        }
     }
 }
 

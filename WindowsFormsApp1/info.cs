@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Zansword/Fightcade-overclocker");
+            System.Diagnostics.Process.Start("https://github.com/Zansword/FC2-FBNeo-Overclocker");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -29,7 +29,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainwin));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -39,7 +38,6 @@ namespace WindowsFormsApp1
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cpustatus = new System.Windows.Forms.Label();
@@ -48,7 +46,6 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.Autocheck = new System.Windows.Forms.CheckBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.scanbyte = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.RadioButton();
             this.button150 = new System.Windows.Forms.RadioButton();
             this.button180 = new System.Windows.Forms.RadioButton();
@@ -65,7 +62,7 @@ namespace WindowsFormsApp1
             this.label5 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.scanbyte = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -157,16 +154,6 @@ namespace WindowsFormsApp1
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 213);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -234,16 +221,6 @@ namespace WindowsFormsApp1
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
-            // 
-            // scanbyte
-            // 
-            this.scanbyte.Location = new System.Drawing.Point(183, 187);
-            this.scanbyte.Name = "scanbyte";
-            this.scanbyte.Size = new System.Drawing.Size(54, 24);
-            this.scanbyte.TabIndex = 34;
-            this.scanbyte.Text = "Scan!";
-            this.scanbyte.UseVisualStyleBackColor = true;
-            this.scanbyte.Click += new System.EventHandler(this.button9_Click);
             // 
             // button100
             // 
@@ -411,11 +388,21 @@ namespace WindowsFormsApp1
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
+            // scanbyte
+            // 
+            this.scanbyte.Location = new System.Drawing.Point(183, 187);
+            this.scanbyte.Name = "scanbyte";
+            this.scanbyte.Size = new System.Drawing.Size(54, 24);
+            this.scanbyte.TabIndex = 34;
+            this.scanbyte.Text = "Scan!";
+            this.scanbyte.UseVisualStyleBackColor = true;
+            this.scanbyte.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Mainwin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 354);
+            this.ClientSize = new System.Drawing.Size(609, 403);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
@@ -429,14 +416,12 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.cpustatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.scanbyte);
             this.Name = "Mainwin";
             this.ShowIcon = false;
             this.Text = "Fightcade FBNeo Overclocker";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -455,7 +440,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label cpustatus;
@@ -464,7 +448,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox Autocheck;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.Button scanbyte;
         private System.Windows.Forms.RadioButton button100;
         private System.Windows.Forms.RadioButton button150;
         private System.Windows.Forms.RadioButton button180;
@@ -481,6 +464,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button9;
         private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.Windows.Forms.Button scanbyte;
     }
 }
 

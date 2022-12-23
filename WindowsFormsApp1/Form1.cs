@@ -45,9 +45,9 @@ namespace WindowsFormsApp1
         {
             trackBar1.Value = 10;
         }
-        
- //**********************************************************************************************************//
- // 백그라운드 작업 - 프로세스 id 검색 및 attach
+
+        //**********************************************************************************************************//
+        // 백그라운드 작업 - 프로세스 id 검색 및 attach
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) // auto-detach process
         {
@@ -191,8 +191,8 @@ namespace WindowsFormsApp1
             backgroundWorker2.RunWorkerAsync();
         }
 
- //**********************************************************************************************************//
- // Array Of Byte 스캔 - 범용으로 만들기 위해서는 필수
+        //**********************************************************************************************************//
+        // Array Of Byte 스캔 - 범용으로 만들기 위해서는 필수
 
         // this function is async, which means it does not block other code
         public async void AoBScan()
@@ -232,7 +232,9 @@ namespace WindowsFormsApp1
             }
 
             m.WriteMemory(memory, "int", "256");
-            cpustatus.Text = "Overclock Disabled";           
+            cpustatus.Text = "Overclock Disabled";
+            cpuvalue2.Text = "100%";
+            cpudec = 256;
         }
 
         private void button2_Click(object sender, EventArgs e) // 150%
@@ -247,6 +249,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "336");
             cpustatus.Text = "Overclocked with 150%";
             cpuvalue2.Text = "150%";
+            cpudec = 336;
         }
 
         private void button3_Click(object sender, EventArgs e) // 180%
@@ -261,6 +264,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "384");
             cpustatus.Text = "Overclocked with 180%";
             cpuvalue2.Text = "180%";
+            cpudec = 384;
         }
 
         private void button4_Click(object sender, EventArgs e) // 200%
@@ -275,6 +279,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "512");
             cpustatus.Text = "Overclocked with 200%";
             cpuvalue2.Text = "200%";
+            cpudec = 512;
         }
 
         private void button5_Click(object sender, EventArgs e) // 300%
@@ -289,6 +294,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "768");
             cpustatus.Text = "Overclocked with 300%";
             cpuvalue2.Text = "300%";
+            cpudec = 768;
         }
 
         private void button6_Click(object sender, EventArgs e) // 400%
@@ -303,6 +309,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "1024");
             cpustatus.Text = "Overclocked with 400%";
             cpuvalue2.Text = "400%";
+            cpudec = 1024;
         }
 
         private void button7_Click(object sender, EventArgs e) // 500%
@@ -317,6 +324,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "1280");
             cpustatus.Text = "Overclocked with 500%";
             cpuvalue2.Text = "500%";
+            cpudec = 1280;
         }
 
         private void button8_Click(object sender, EventArgs e) // 533%
@@ -331,6 +339,7 @@ namespace WindowsFormsApp1
             m.WriteMemory(memory, "int", "1331");
             cpustatus.Text = "Overclocked with 533%";
             cpuvalue2.Text = "533%";
+            cpudec = 1331;
         }
 
         private void button9_Click_1(object sender, EventArgs e) // ok button
@@ -345,10 +354,13 @@ namespace WindowsFormsApp1
             String cpupercent = Convert.ToString(textBox1.Text);
             int cpuvalue = Convert.ToInt32(cpupercent, 16);
             string cpuvalue3 = Convert.ToString(cpuvalue);
+            cpudec = cpuvalue;
 
             m.WriteMemory(memory, "int", cpuvalue3);
             cpustatus.Text = "Overclocked with " + cpupercent + " %";
             cpuvalue2.Text = cpupercent + " %";
+
+            return;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -383,7 +395,7 @@ namespace WindowsFormsApp1
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             textBox1.Text = "" + trackBar1.Value;
-//            textBox1.Text = trackBar1.Value.ToString();
+            //            textBox1.Text = trackBar1.Value.ToString();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
